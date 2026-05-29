@@ -6,7 +6,7 @@ from IPython.display import display
 
 DATA_PATH = Path("../data/clean/ventas_marketing.parquet")
 
-class DashUtils:
+class DashboardBuilder:
     """Construye y gestiona un panel interactivo de análisis de ventas.
 
     La clase carga datos limpios de ventas y marketing y expone métodos para filtrar,
