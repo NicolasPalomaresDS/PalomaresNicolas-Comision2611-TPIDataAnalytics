@@ -7,17 +7,17 @@ from IPython.display import display
 DATA_PATH = Path("../data/clean/ventas_marketing.parquet")
 
 class DashUtils:
-    """Builds and manages an interactive sales analysis dashboard.
+    """Construye y gestiona un panel interactivo de análisis de ventas.
 
-    The class loads cleaned sales and marketing data and exposes methods to filter,
-    plot, and display dashboard elements in a notebook environment.
+    La clase carga datos limpios de ventas y marketing y expone métodos para filtrar,
+    graficar y mostrar los elementos del panel en un entorno de notebook.
     """
 
     def __init__(self):
-        """Initializes the dashboard state and filter controls.
+        """Inicializa el estado del panel y los controles de filtrado.
 
-        The constructor loads the cleaned sales dataset and prepares the output
-        widgets and category filter used across the dashboard visualizations.
+        El constructor carga el conjunto de datos de ventas ya procesado y prepara
+        los widgets de salida y el filtro de categoría usados en las visualizaciones.
         """
 
         self.df = pd.read_parquet(DATA_PATH)
@@ -74,11 +74,32 @@ class DashUtils:
         )
 
     def _get_filtered_df(self):
+        """Filtra el conjunto de datos del panel según la categoría seleccionada.
+
+        El método devuelve el conjunto de datos completo o solo las filas que
+        coinciden con la categoría actualmente seleccionada en el desplegable.
+
+        Returns:
+            pandas.DataFrame: Registros de ventas y marketing filtrados de acuerdo
+            con la categoría activa.
+        """
+
         if self.filter.value == "Todas":
             return self.df
         return self.df[self.df["categoria"] == self.filter.value]
 
     def _apply_style(self, fig):
+        """Aplica un estilo visual consistente a una figura de Plotly.
+
+        El método actualiza las propiedades de diseño para alinear los gráficos con
+        el tema visual del panel y mejorar su legibilidad.
+
+        Args:
+            fig: Figura de Plotly a la que se le aplicará el estilo.
+
+        Returns:
+            La misma instancia de figura de Plotly con la configuración de diseño actualizada.
+        """
 
         fig.update_layout(
 
@@ -108,6 +129,12 @@ class DashUtils:
         return fig
 
     def _plot_ventas_mensuales(self):
+        """Genera un gráfico de serie temporal de ventas mensuales para el panel.
+
+        El método agrega las ventas totales por mes, crea un gráfico de líneas estilizado
+        y lo muestra en el widget de salida correspondiente del panel.
+        """
+
         df = self._get_filtered_df()
         ventas_mensuales = (
             df
@@ -140,6 +167,12 @@ class DashUtils:
             fig.show()
 
     def _plot_costo_por_canal(self):
+        """Crea un gráfico de barras que compara el costo total de marketing por canal.
+
+        El método agrega los costos únicos por producto en cada canal, construye una
+        visualización de barras estilizada y la muestra en la sección de costo por canal.
+        """
+
         df = self._get_filtered_df()
 
         costo_total_por_canal = (
@@ -183,6 +216,12 @@ class DashUtils:
             fig.show()
 
     def _plot_mejores_productos(self):
+        """Construye un gráfico de barras horizontal que resalta los productos con mejor rendimiento.
+
+        El método selecciona los productos con ventas totales por encima del promedio, crea una
+        visualización de barras estilizada ordenada por rendimiento y la muestra en el panel.
+        """
+
         df = self._get_filtered_df()
         mejores_productos = (
             df
@@ -213,6 +252,12 @@ class DashUtils:
             fig.show()
 
     def _plot_duracion_ratio(self):
+        """Muestra un diagrama de dispersión que relaciona la duración de la campaña con el ratio ventas/costo.
+
+        El método visualiza cómo la duración de las campañas y el precio del producto interactúan con
+        los indicadores de eficiencia entre categorías, ayudando a identificar rangos óptimos.
+        """
+
         df = self._get_filtered_df()
 
         fig = px.scatter(
@@ -237,6 +282,12 @@ class DashUtils:
             fig.show()
 
     def _build_kpis(self):
+        """Crea y devuelve una fila de tarjetas de indicadores clave de rendimiento (KPIs).
+
+        El método resume los datos de ventas filtrados en widgets de KPI estilizados que
+        resaltan totales, promedios y productos de mejor rendimiento en el panel.
+        """
+
         df = self._get_filtered_df()
 
         total_ventas = df["precio_total"].sum()
@@ -293,12 +344,24 @@ class DashUtils:
         return widgets.HBox([kpi1, kpi2, kpi3, kpi4, kpi5])
 
     def _update_all(self):
+        """Actualiza todas las visualizaciones del panel según el estado actual del filtro.
+
+        El método vuelve a ejecutar cada rutina de graficado para que los gráficos se mantengan
+        sincronizados cuando cambian los datos base o la categoría seleccionada por el usuario.
+        """
+
         self._plot_ventas_mensuales()
         self._plot_costo_por_canal()
         self._plot_mejores_productos()
         self._plot_duracion_ratio()
 
     def build_dashboard(self):
+        """Ensamblar y mostrar el panel interactivo completo de ventas.
+
+        El método conecta las interacciones del filtro, organiza los widgets de KPIs y gráficos
+        y realiza el renderizado inicial de todos los componentes del panel en el notebook.
+        """
+
         def on_filter_change(change):
             if change["name"] == "value":
                 self._update_all()
