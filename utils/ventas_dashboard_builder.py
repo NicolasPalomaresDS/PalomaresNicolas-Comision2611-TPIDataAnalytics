@@ -6,7 +6,7 @@ from IPython.display import display
 
 DATA_PATH = Path("../data/clean/ventas_marketing.parquet")
 
-class DashboardBuilder:
+class VentasDashboardBuilder:
     """Construye y gestiona un panel interactivo de análisis de ventas.
 
     La clase carga datos limpios de ventas y marketing y expone métodos para filtrar,
@@ -114,12 +114,18 @@ class DashboardBuilder:
             ),
 
             xaxis=dict(
-                showgrid=True, gridcolor="#e0e0e0", gridwidth=0.5,
+                showgrid=True,
+                gridcolor="#e0e0e0",
+                gridwidth=0.5,
+                griddash="dot",
                 title=dict(font=dict(size=11, color="#333333", family="sans-serif"))
             ),
 
             yaxis=dict(
-                showgrid=True, gridcolor="#e0e0e0", gridwidth=0.5,
+                showgrid=True,
+                gridcolor="#e0e0e0",
+                gridwidth=0.5,
+                griddash="dot",
                 title=dict(font=dict(size=11, color="#333333", family="sans-serif"))
             ),
 
@@ -136,6 +142,7 @@ class DashboardBuilder:
         """
 
         df = self._get_filtered_df()
+
         ventas_mensuales = (
             df
             .groupby("mes_venta")["precio_total"]
@@ -156,11 +163,39 @@ class DashboardBuilder:
         )
 
         fig.update_traces(
-            line=dict(color="#4C72B0", width=2),
+            line=dict(color="#EC8F8D", width=2.5),
             mode="lines+markers",
-            marker=dict(size=6, color="#4C72B0"),
+            marker=dict(
+                size=8,
+                color="white",
+                line=dict(color="#EC8F8D", width=2)
+            ),
+            fill="tozeroy",
+            fillcolor="rgba(236, 143, 141, 0.15)"
         )
+
+        fig.add_hline(
+            y=ventas_mensuales["total_ventas"].mean(),
+            line_dash="dot",
+            line_color="red",
+            opacity=0.5,
+            annotation_text="Media",
+            annotation_position="top right"
+        )
+
         fig = self._apply_style(fig)
+        fig.update_layout(
+            yaxis=dict(range=[
+                ventas_mensuales["total_ventas"].min() * 0.95,
+                ventas_mensuales["total_ventas"].max() * 1.05
+            ]),
+            xaxis=dict(
+                tickmode="linear",
+                tick0=1,
+                dtick=1,
+                range=[0.5, 12.5]
+            )
+        )
 
         self.output_ventas_mensuales.clear_output(wait=True)
         with self.output_ventas_mensuales:
@@ -206,12 +241,23 @@ class DashboardBuilder:
             range_y=[
                 costo_total_por_canal["costo_total"].min() * 0.95,
                 costo_total_por_canal["costo_total"].max() * 1.05
-            ]
+            ],
+            text="costo_total"
         )
-        fig.update_traces(marker_color="#4C72B0")
+
+        fig.update_traces(
+            marker=dict(
+                color="#537D96",
+                line=dict(color="#537D96", width=0.5)
+            ),
+            texttemplate="$%{text:,.0f}",
+            textposition="outside"
+        )
+
         fig = self._apply_style(fig)
 
         self.output_costo_por_canal.clear_output(wait=True)
+
         with self.output_costo_por_canal:
             fig.show()
 
@@ -242,10 +288,22 @@ class DashboardBuilder:
             range_x=[
                 mejores_productos["precio_total"].min() * 0.95,
                 mejores_productos["precio_total"].max() * 1.05
-            ]
+            ],
+            text="precio_total"
         )
-        fig.update_traces(marker_color="#4C72B0")
+
+        fig.update_traces(
+            marker=dict(
+                color="#537D96",
+                line=dict(color="#537D96", width=0.5)
+            ),
+            texttemplate="$%{text:,.0f}",
+            textposition="outside"
+        )
+
         fig = self._apply_style(fig)
+
+        fig.update_layout(margin=dict(l=150, r=60, t=50, b=40))
 
         self.output_mejores_productos.clear_output(wait=True)
         with self.output_mejores_productos:
@@ -273,7 +331,9 @@ class DashboardBuilder:
             },
             size="precio",
             color="categoria",
-            color_discrete_sequence=["#1a3a5c", "#4C72B0", "#a8c4e0"]
+            color_discrete_sequence=["#44A194", "#537D96", "#EC8F8D"],
+            symbol="categoria",
+            trendline="ols"
         )
         fig = self._apply_style(fig)
 
