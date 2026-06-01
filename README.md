@@ -1,6 +1,6 @@
 # Palomares Nicolas (Comisión 26110) TPI Data Analytics
 
-### [Enlace a los Dashboards Interactivos](https://colab.research.google.com/drive/1uXq0WZ5mHBYsBHBzej6pMA21Z00lqlFD?usp=sharing){:target="_blank"}
+### [Notebook Dashboards](https://nbviewer.org/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/dashboard.ipynb)
 
 **(Poner Google Colab en modo claro (light) para que se visualicen correctamente los tableros)**
 
