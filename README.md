@@ -41,5 +41,6 @@ Organización del repositorio actual, describiendo los archivos y carpetas princ
 │   ├── limpieza.ipynb                 # Limpieza y transformación de datos
 │   └── modelado.ipynb                 # Modelado y consolidación de datos
 │
+├── .gitignore                         # Archivo gitignore
 └── README.md                          # Este archivo
 ```
