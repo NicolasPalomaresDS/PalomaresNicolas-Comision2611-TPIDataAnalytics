@@ -2,7 +2,7 @@
 
 ### [1. Notebook Limpieza](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/limpieza.ipynb)
 ### [2. Notebook Análisis Exploratorio + FE](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/analisis.ipynb)
-### [3. Notebook Dashboards (poner Colab en modo claro o "light")](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/dashboard.ipynb)
+### [3. Notebook Dashboards (poner Colab en modo claro o "light")](https://colab.research.google.com/drive/1uXq0WZ5mHBYsBHBzej6pMA21Z00lqlFD?usp=sharing)
 ### [4. Notebook Modelo XGBoost](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/modelado.ipynb)
 
 **(Poner Google Colab en modo claro (light) para que se visualicen correctamente los tableros)**
