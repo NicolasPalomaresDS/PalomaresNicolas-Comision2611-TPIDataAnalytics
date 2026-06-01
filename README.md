@@ -9,35 +9,37 @@ Este repositorio contiene el Trabajo Práctico Integrador de la materia Data Ana
 
 ## Estructura del Directorio
 
+Organización del repositorio actual, describiendo los archivos y carpetas principales del proyecto.
+
 ```
 .
 ├── data
-│   ├── clean
-│   │   ├── clientes.parquet
-│   │   ├── marketing.parquet
-│   │   ├── ventas_marketing.parquet
-│   │   └── ventas.parquet
+│   ├── clean                          # Datos procesados y listos para análisis
+│   │   ├── clientes.parquet
+│   │   ├── marketing.parquet
+│   │   ├── ventas_marketing.parquet   # Dataset combinado de ventas y marketing
+│   │   └── ventas.parquet
 │   │
-│   └── raw
-│       ├── clientes.csv
-│       ├── marketing.csv
-│       └── ventas.csv
+│   └── raw                            # Datos originales sin procesar
+│       ├── clientes.csv
+│       ├── marketing.csv
+│       └── ventas.csv
 │
 ├── model
-│   ├── __init__.py
-│   └── model.py
+│   ├── __init__.py
+│   └── model.py                       # Definición de modelos de datos
+│
+├── utils
+│   ├── __init__.py
+│   ├── clientes_dashboard_builder.py  # Construcción del dashboard de clientes
+│   ├── static_utils.py                # Funciones auxiliares compartidas
+│   └── ventas_dashboard_builder.py    # Construcción del dashboard de ventas
 │
 ├── notebooks
-│   ├── analisis.ipynb
-│   ├── dashboard.ipynb
-│   ├── limpieza.ipynb
-│   └── modelado.ipynb
+│   ├── analisis.ipynb                 # Análisis exploratorio y estadístico
+│   ├── dashboard.ipynb                # Dashboard interactivo con Plotly
+│   ├── limpieza.ipynb                 # Limpieza y transformación de datos
+│   └── modelado.ipynb                 # Modelado y consolidación de datos
 │
-├── README.md
-│
-└── utils
-    ├── clientes_dashboard_builder.py
-    ├── __init__.py
-    ├── static_utils.py
-    └── ventas_dashboard_builder.py
+└── README.md                          # Este archivo
 ```
