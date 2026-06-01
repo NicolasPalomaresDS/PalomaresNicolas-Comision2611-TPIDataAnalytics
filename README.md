@@ -1,9 +1,9 @@
 # Palomares Nicolas (Comisión 26110) TPI Data Analytics
 
-### [1. Notebook Limpieza](https://nbviewer.org/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/limpieza.ipynb)
-### [2. Notebook Análisis Exploratorio + FE](https://nbviewer.org/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/analisis.ipynb)
-### [3. Notebook Dashboards](https://nbviewer.org/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/dashboard.ipynb)
-### [4. Notebook Modelo XGBoost](https://nbviewer.org/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/modelado.ipynb)
+### [1. Notebook Limpieza](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/limpieza.ipynb)
+### [2. Notebook Análisis Exploratorio + FE](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/analisis.ipynb)
+### [3. Notebook Dashboards (poner Colab en modo claro o "light")](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/dashboard.ipynb)
+### [4. Notebook Modelo XGBoost](https://colab.research.google.com/github/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics/blob/main/notebooks/modelado.ipynb)
 
 **(Poner Google Colab en modo claro (light) para que se visualicen correctamente los tableros)**
 
