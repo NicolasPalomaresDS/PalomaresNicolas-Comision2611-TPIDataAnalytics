@@ -48,7 +48,8 @@ Para explorar o modificar manualmente el código:
 
 **Requisitos:**
 
-- Python v3.12.3 o superior
+- [Python v3.12.3](https://www.python.org/downloads/release/python-3123/) o superior
+- [Git](https://git-scm.com/) instalado
 
 **Clonar el repositorio:**
 
