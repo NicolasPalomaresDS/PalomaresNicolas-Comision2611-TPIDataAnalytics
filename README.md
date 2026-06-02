@@ -41,3 +41,36 @@ Organización del repositorio actual, describiendo los archivos y carpetas princ
 ├── .gitignore                         # Archivo gitignore
 └── README.md                          # Este archivo
 ```
+
+## Desarrollo local
+
+Para explorar o modificar manualmente el código:
+
+**Requisitos:**
+
+- Python v3.12.3 o superior
+
+**Clonar el repositorio:**
+
+```bash
+git clone https://github.com/NicolasPalomaresDS/PalomaresNicolas-Comision2611-TPIDataAnalytics.git
+```
+
+**Entrar al directorio:**
+
+```bash
+cd PalomaresNicolas-Comision2611-TPIDataAnalytics
+```
+
+**Crear entorno virtual y activarlo:**
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+**Instalar librerías necesarias:**
+
+```bash
+pip install -r requirements.txt
+```

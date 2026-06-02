@@ -1,0 +1,15 @@
+matplotlib==3.10.9
+pandas==3.0.3
+numpy==2.4.6
+plotly==6.7.0
+ipywidgets==8.1.8
+jupyterlab_widgets==3.0.16
+pyarrow==24.0.0
+scikit-learn==1.8.0
+scipy==1.17.1
+seaborn==0.13.2
+statsmodels==0.14.6
+xgboost==3.2.0
+
+# Palomares-Datacleaner
+git+https://github.com/NicolasPalomaresDS/palomares-datacleaner.git
