@@ -1,6 +1,6 @@
 # Palomares Nicolas (Comisión 26110) TPI Data Analytics
 
-Este repositorio contiene el Trabajo Práctico Integrador del curso Data Analytics (Comisión 2611). El proyecto abarca el ciclo completo de análisis de datos sobre un dataset de ventas: desde la recopilación y limpieza, pasando por el análisis exploratorio y estadístico, hasta la visualización con Matplotlib, Seaborn y dashboards interactivos con Plotly. Desarrollado en VSCode; la notebook con los dashboards está disponible para visualizar directamente en Google Colab mediante el siguiente enlace:
+Este repositorio contiene el Trabajo Práctico Integrador del curso Data Analytics (Comisión 2611). El proyecto abarca el ciclo completo de análisis de datos sobre un dataset de ventas: desde la recopilación y limpieza, pasando por el análisis exploratorio y estadístico, hasta la visualización con Matplotlib y dashboards interactivos con Plotly. Desarrollado en VSCode; **la notebook con los dashboards y el informe está disponible para visualizar directamente en Google Colab mediante el siguiente enlace:**
 
 ### [Notebook Dashboards + Informe e Insights (poner Colab en modo claro)](https://colab.research.google.com/drive/1uXq0WZ5mHBYsBHBzej6pMA21Z00lqlFD?usp=sharing)
 
